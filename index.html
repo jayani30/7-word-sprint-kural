@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>திருக்குறள் - அருமை உடைத்தென்று அசாவாமை வேண்டும் | பெருமை முயற்சி தரும்</title>
+  <meta name="description" content="தமிழ் பாரம்பரியம் மற்றும் நவீன தொழில்நுட்பத்துடன் ஒரு விதையின் பயணம் மூலம் திருக்குறள் அறியும் தளம்.">
+  
+  <!-- Google Fonts: Noto Serif Tamil, Noto Sans Tamil, Inter, Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Serif+Tamil:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="heritage-theme">
+
+  <!-- Atmospheric Background Canvas Particles -->
+  <div class="dust-particles" id="dust-particles"></div>
+  <div class="light-ray-overlay"></div>
+  <div class="grain-texture"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">திருக்குறள் | முயற்சி & பெருமை</span>
+      </div>
+      <nav class="nav-links">
+        <button id="nav-story-btn" class="nav-btn active">📖 பயணம் (Story)</button>
+        <button id="nav-kural-btn" class="nav-btn">📜 குறள் பாடம் (Kural)</button>
+        <button id="nav-game-btn" class="nav-btn">🎴 Flash Cards</button>
+      </nav>
+      <div class="audio-controls">
+        <button id="lang-toggle-btn" class="icon-btn lang-btn" title="Translate Language / மொழியை மாற்றுக" aria-label="Toggle Language">
+          <span id="lang-icon">🌐 EN</span>
+        </button>
+        <button id="sound-toggle-btn" class="icon-btn" title="ஒலி இயக்கம்/முடக்கம்" aria-label="Toggle Sound">
+          <span id="sound-icon">🔊</span>
+        </button>
+        <button id="tts-btn" class="icon-btn" title="குரல் மூலம் கேட்க" aria-label="Listen Voice">
+          <span>🗣️</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- HERO SECTION (Cinematic Documentary Opening) -->
+    <section id="hero-section" class="hero-section">
+      <div class="hero-card heritage-card">
+        <div class="kural-badge-muted">திருக்குறள் #611 • ஆள்வினை உடைமை</div>
+        
+        <h1 class="hero-main-title">ஒரு சிறிய விதையின் பயணம்</h1>
+        
+        <div class="kural-quote-box">
+          <p class="kural-serif-text">
+            "அருமை உடைத்தென்று அசாவாமை வேண்டும்<br>
+            <span class="gold-highlight">பெருமை முயற்சி தரும்."</span>
+          </p>
+        </div>
+        
+        <p class="hero-subtitle">
+          எவ்வளவு கடினமான சூழல் வந்தாலும் முயற்சியைக் கைவிடக் கூடாது.<br>
+          தொடர் முயற்சியே மனிதனுக்குப் பெருமையையும் வெற்றியையும் தரும்.
+        </p>
+
+        <div class="hero-actions">
+          <button id="start-story-btn" class="btn btn-heritage">
+            <span>கதையைத் தொடங்கலாம்</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <button id="quick-game-btn" class="btn btn-outline">
+            <span>Flash Cards பயிற்சி</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CINEMATIC STORY THEATER SECTION -->
+    <section id="story-section" class="story-section heritage-card">
+      
+      <!-- Story Header & Progress Indicator -->
+      <div class="story-header">
+        <div class="story-progress-line">
+          <div id="story-progress-bar" class="story-progress-fill" style="width: 12.5%;"></div>
+        </div>
+        <div class="scene-info-header">
+          <span id="scene-counter" class="scene-badge-gold">காட்சி 01 / 08</span>
+          <h2 id="scene-title" class="scene-title">1. சௌகரியமான சூழல் (Comfort Zone)</h2>
+        </div>
+      </div>
+
+      <!-- Main Cinema Visual Stage -->
+      <div class="stage-wrapper">
+        <div id="visual-stage" class="visual-stage cinema-stage">
+          
+          <!-- Sky Layer -->
+          <div class="sky-layer" id="sky-layer">
+            <div id="sun" class="sun sun-natural"></div>
+            <div class="sun-beams"></div>
+            <div id="rain-container" class="rain-container"></div>
+            
+            <div class="clouds">
+              <div class="cloud cloud-1"></div>
+              <div class="cloud cloud-2"></div>
+            </div>
+          </div>
+
+          <!-- Soil Ground Border -->
+          <div class="ground-line-parchment"></div>
+
+          <!-- Layered Underground Environment -->
+          <div class="soil-layer" id="soil-layer">
+            <div class="soil-texture-bg"></div>
+            
+            <!-- Natural Stone Obstacle (Scene 4 & 5) -->
+            <div id="rocks-container" class="rocks-container">
+              <div class="stone-obstacle" id="rock-top"></div>
+            </div>
+
+            <!-- Stylized Natural Seed SVG (No Cartoon Eyes) -->
+            <div id="character-wrapper" class="character-wrapper pos-underground">
+              <svg id="seed-svg" viewBox="0 0 200 240" class="seed-svg">
+                <!-- Organic Roots Group -->
+                <g id="roots-group" class="roots-group">
+                  <path id="root-main" d="M 100 150 Q 100 180 100 200" stroke="#8A624A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                  <path id="root-left" d="M 100 160 Q 80 175 70 190" stroke="#6B4636" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                  <path id="root-right" d="M 100 160 Q 120 175 130 190" stroke="#8A624A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                </g>
+
+                <!-- Organic Shoot / Stem Group -->
+                <g id="sprout-group" class="sprout-group">
+                  <path id="stem-path" d="M 100 110 Q 100 80 100 50" stroke="#557A46" stroke-width="5" fill="none" stroke-linecap="round"/>
+                  
+                  <!-- Natural Leaves -->
+                  <g id="leaf-left" class="leaf" transform="translate(100, 70) scale(0)">
+                    <path d="M 0 0 C -25 -15 -35 10 0 20" fill="#557A46" stroke="#3B5231" stroke-width="1.5"/>
+                  </g>
+                  <g id="leaf-right" class="leaf" transform="translate(100, 70) scale(0)">
+                    <path d="M 0 0 C 25 -15 35 10 0 20" fill="#7A9A60" stroke="#3B5231" stroke-width="1.5"/>
+                  </g>
+                  
+                  <!-- Grand Tree Canopy -->
+                  <g id="tree-canopy" class="tree-canopy" transform="translate(100, 20) scale(0)">
+                    <circle cx="0" cy="-20" r="46" fill="#3B5231"/>
+                    <circle cx="-25" cy="-10" r="36" fill="#557A46"/>
+                    <circle cx="25" cy="-10" r="36" fill="#47633B"/>
+                    <circle cx="0" cy="-45" r="36" fill="#7A9A60"/>
+                    <!-- Natural Blossoms / Fruits -->
+                    <circle cx="-15" cy="-25" r="5" fill="#C99A4A"/>
+                    <circle cx="20" cy="-30" r="5" fill="#C99A4A"/>
+                    <circle cx="5" cy="-10" r="5" fill="#D8C0A3"/>
+                  </g>
+                </g>
+
+                <!-- Natural Seed Body (Stylized Organic Shape) -->
+                <g id="seed-body" class="seed-body" transform="translate(100, 130)">
+                  <!-- Left & Right Shell Halves for visual sprouting -->
+                  <path id="seed-shell-left" d="M 0 -24 C -22 -24 -24 14 0 24 Z" fill="url(#brownSeedGrad)" stroke="#4A2F24" stroke-width="2.5" style="transition: transform 0.8s ease; transform-origin: 0px 24px;"/>
+                  <path id="seed-shell-right" d="M 0 -24 C 22 -24 24 14 0 24 Z" fill="url(#brownSeedGrad)" stroke="#4A2F24" stroke-width="2.5" style="transition: transform 0.8s ease; transform-origin: 0px 24px;"/>
+                  
+                  <!-- Realistic Crack Line overlay for awakening -->
+                  <path id="seed-crack" d="M 0 -20 L -3 -5 L 4 5 L 0 20" stroke="#C99A4A" stroke-width="2.5" fill="none" opacity="0"/>
+
+                  <defs>
+                    <linearGradient id="brownSeedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#8A624A" />
+                      <stop offset="60%" stop-color="#6B4636" />
+                      <stop offset="100%" stop-color="#4A2F24" />
+                    </linearGradient>
+                  </defs>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Choice Path Overlay (Scene 2) -->
+            <div id="choice-container" class="choice-container hidden">
+              <div class="choice-card choice-stay" id="choice-stay-btn">
+                <span class="choice-tag">தேர்வு A</span>
+                <span class="choice-title">இங்கேயே அமைதியாக இருப்பது</span>
+                <span class="choice-desc">(பாதுகாப்பானது, ஆனால் ஒருபோதும் மரமாக முடியாது)</span>
+              </div>
+              <div class="choice-card choice-grow highlight-choice" id="choice-grow-btn">
+                <span class="choice-tag tag-gold">தேர்வு B</span>
+                <span class="choice-title">மண்ணைப் பிளந்து வெளியே வர முயல்வது</span>
+                <span class="choice-desc">(கடினமானது, ஆனால் கம்பீரமான மரமாக வளரலாம்)</span>
+              </div>
+            </div>
+
+            <!-- Attempt Progress Indicator (Scene 5 - Modern Minimal 01--04) -->
+            <div id="try-container" class="try-container hidden">
+              <div class="cinematic-steps-indicator">
+                <span id="try-1" class="step-num">01</span>
+                <span class="step-line"></span>
+                <span id="try-2" class="step-num">02</span>
+                <span class="step-line"></span>
+                <span id="try-3" class="step-num">03</span>
+                <span class="step-line"></span>
+                <span id="try-4" class="step-num">04</span>
+              </div>
+              <button id="push-effort-btn" class="btn btn-heritage-gold">
+                <span>கடினமான மண்ணைப் பிளந்து முயல்</span>
+                <span>→</span>
+              </button>
+            </div>
+            <!-- Split Screen Comparison Overlay for Scene 12 -->
+            <div id="split-comparison" class="split-comparison-container hidden">
+              <div class="split-side split-left">
+                <div class="split-badge">SAFE</div>
+                <div class="split-seed-icon">🌰</div>
+                <div class="split-label">மண்ணுக்குள் பாதுகாப்பாக...</div>
+              </div>
+              <div class="split-divider-line"></div>
+              <div class="split-side split-right">
+                <div class="split-badge badge-gold">GROWTH</div>
+                <div class="split-tree-icon">🌳</div>
+                <div class="split-label">மண்ணைப் பிளந்து வெளியிலும்...</div>
+              </div>
+              <div class="split-banner-msg">
+                "வசதியில் இருப்பது பாதுகாப்பாக இருக்கலாம். ஆனால் வளர்ச்சிக்கு முயற்சி தேவை."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dialogue & Editorial Caption Box -->
+        <div class="narrative-box">
+          <div class="narrative-content">
+            <p id="narrative-text" class="narrative-text">
+              "இங்கேயே இருந்தால் பாதுகாப்பாக இருக்கலாம்..."
+            </p>
+            <div id="narrative-subtext" class="narrative-subtext">
+              விதை மண்ணுக்குள் அமைதியாகவும் பாதுகாப்பாகவும் இருந்தது.
+            </div>
+          </div>
+
+          <button id="speak-narrative-btn" class="speak-inline-btn" title="படித்துக் காட்டு">
+            🔊
+          </button>
+        </div>
+      </div>
+
+      <!-- Story Navigation Bar -->
+      <div class="story-nav-bar">
+        <button id="prev-scene-btn" class="btn btn-nav" disabled>
+          ← முந்தைய காட்சி
+        </button>
+
+        <button id="autoplay-btn" class="btn btn-nav btn-outline">
+          ▶️ திரைப்படக் காட்சி (Auto-Play)
+        </button>
+
+        <div class="scene-dots-container" id="scene-dots">
+          <!-- Dots generated in JS -->
+        </div>
+
+        <button id="next-scene-btn" class="btn btn-nav btn-heritage">
+          அடுத்த காட்சி →
+        </button>
+      </div>
+
+      <!-- End Story CTA -->
+      <div id="story-end-cta" class="story-end-cta hidden">
+        <button id="learn-kural-btn" class="btn btn-heritage-gold">
+          📜 திருக்குறள் ஆழமான பாடம் அறிவோம்
+        </button>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE QUESTION MINI-SECTION -->
+    <section id="interactive-choice-section" class="choice-question-section heritage-card">
+      <div class="section-title-wrap">
+        <span class="section-tag-gold">சிந்தனை பாடம்</span>
+        <h2>வாழ்க்கையில் ஒரு பெரிய தடை வந்தால் என்ன செய்ய வேண்டும்?</h2>
+      </div>
+
+      <div class="interactive-options-grid">
+        <button id="opt-giveup" class="interactive-option-btn opt-wrong">
+          <span class="opt-label">A</span>
+          <span class="opt-text">இது மிகவும் கடினம் என்று முயற்சியை விட்டுவிடலாம்</span>
+        </button>
+        <button id="opt-tryagain" class="interactive-option-btn opt-correct">
+          <span class="opt-label opt-gold">B</span>
+          <span class="opt-text">தளர்ச்சி அடையாமல் மீண்டும் மீண்டும் முயற்சி செய்வோம்</span>
+        </button>
+      </div>
+
+      <div id="choice-feedback" class="choice-feedback hidden"></div>
+    </section>
+
+    <!-- KURAL LITERARY PRESENTATION SECTION -->
+    <section id="kural-section" class="kural-section heritage-card">
+      <div class="section-title-wrap">
+        <span class="section-tag-gold">இலக்கிய விளக்கம்</span>
+        <h2>திருக்குறளின் ஆழமான கருத்து</h2>
+      </div>
+
+      <div class="kural-parchment-frame">
+        <div class="kural-main-quote">
+          <p class="kural-serif-large">
+            "அருமை உடைத்தென்று அசாவாமை வேண்டும்<br>
+            <span class="gold-line-highlight">பெருமை முயற்சி தரும்."</span>
+          </p>
+          <div class="kural-underline-gold"></div>
+        </div>
+
+        <div class="kural-meaning-content">
+          <h3>பொருள் (Meaning)</h3>
+          <p class="kural-meaning-serif">
+            "ஒரு செயல் மிகவும் கடினமானது என்று எண்ணி மனம் தளரக் கூடாது. தளர்ச்சி அடையாமல் தொடர்ந்து செய்யும் இடைவிடாத முயற்சியே நமக்கு உயர்ந்த பெருமையையும் வெற்றியையும் தரும்."
+          </p>
+        </div>
+      </div>
+
+      <!-- Word Breakdown Grid -->
+      <div class="word-breakdown-card">
+        <h3>சொல் பிரித்து பொருள் அறிவோம்</h3>
+        <div class="words-grid">
+          <div class="word-item">
+            <div class="word-tamil">அருமை உடைத்தென்று</div>
+            <div class="word-meaning">இது மிகவும் கடினமானது என்று எண்ணி</div>
+          </div>
+          <div class="word-item">
+            <div class="word-tamil">அசாவாமை வேண்டும்</div>
+            <div class="word-meaning">மனம் தளராமல் இருக்க வேண்டும் (சோம்பல் அடையக்கூடாது)</div>
+          </div>
+          <div class="word-item">
+            <div class="word-tamil">பெருமை</div>
+            <div class="word-meaning">உயர்ந்த பெருமையும் வெற்றியும்</div>
+          </div>
+          <div class="word-item">
+            <div class="word-tamil">முயற்சி தரும்</div>
+            <div class="word-meaning">இடைவிடாத உழைப்பே நமக்குத் தரும்</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moral Banner -->
+      <div class="moral-banner heritage-moral">
+        <div class="moral-content">
+          <h3>முக்கிய நீதி (Core Moral)</h3>
+          <p>"கஷ்டம் வந்தாலும் முயற்சியை விட்டுவிடாதே. முயற்சிதான் பெருமைக்கு வழி!"</p>
+        </div>
+      </div>
+
+      <div class="kural-actions">
+        <button id="goto-game-btn" class="btn btn-heritage-gold">
+          🎴 Flash Cards பயிற்சித் தொடங்கலாம்
+        </button>
+      </div>
+    </section>
+
+    <!-- FLASH CARD KNOWLEDGE GAME SECTION -->
+    <section id="game-section" class="game-section heritage-card">
+      <div class="game-header">
+        <div class="section-title-wrap">
+          <span class="section-tag-gold">அறிவுச் சோதனை</span>
+          <h2>Flash Card கேள்விகள்</h2>
+          <p class="game-instruction">கார்டைக் கிளிக் செய்து திருப்பிப் பதிலைப் பாருங்கள்.</p>
+        </div>
+
+        <div class="score-board">
+          <div class="score-card">
+            <span class="score-label">மதிப்பெண்:</span>
+            <span id="current-score" class="score-value">0</span> / <span id="total-cards">8</span>
+          </div>
+          <div class="progress-badge-gold">
+            <span id="card-progress-text">கார்டு 01 / 08</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Card Display Area -->
+      <div class="card-display-area">
+        <div id="flash-card" class="flash-card-3d parchment-card">
+          
+          <!-- Card Front -->
+          <div class="card-face card-front">
+            <div class="card-corner-num" id="card-num-front">#01</div>
+            <div class="card-body-content">
+              <span class="card-symbol">✦</span>
+              <h3 id="card-question" class="card-question-text">
+                விதை முதலில் எங்கே இருந்தது?
+              </h3>
+              <div class="flip-hint">
+                <span>(கார்டைத் தொட்டுத் திருப்புக)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Back -->
+          <div class="card-face card-back">
+            <div class="card-corner-num" id="card-num-back">#01</div>
+            <div class="card-body-content">
+              <span class="card-symbol-gold">📜</span>
+              <div class="card-answer-label">பதில்:</div>
+              <p id="card-answer" class="card-answer-text">
+                மண்ணுக்குள் இருந்தது.
+              </p>
+
+              <!-- Evaluation Buttons -->
+              <div class="card-evaluation-actions" onclick="event.stopPropagation();">
+                <button id="btn-answer-wrong" class="eval-btn btn-wrong-heritage">
+                  <span>✕ தவறாக சொன்னேன்</span>
+                </button>
+                <button id="btn-answer-correct" class="eval-btn btn-correct-heritage">
+                  <span>✓ சரியாக சொன்னேன்</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnails Grid -->
+      <div class="card-thumbs-grid" id="card-thumbs-grid">
+        <!-- Generated by JS -->
+      </div>
+
+      <!-- Results Modal -->
+      <div id="game-results" class="game-results hidden">
+        <div class="results-card heritage-card">
+          <div class="results-symbol">🌳</div>
+          <h2>வாழ்த்துகள்!</h2>
+          <p id="results-message" class="results-message">
+            அருமை! நீங்கள் விதையைப் போல முயற்சியைக் கைவிடவில்லை!
+          </p>
+          <div class="final-score-display">
+            இறுதி மதிப்பெண்: <span id="final-score-val">8</span> / 8
+          </div>
+          <div class="results-actions">
+            <button id="replay-game-btn" class="btn btn-heritage-gold">
+              🔄 மீண்டும் விளையாடு
+            </button>
+            <button id="replay-story-btn" class="btn btn-outline">
+              📖 கதையை மீண்டும் காண்
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p>✦ திருக்குறள் | அருமை உடைத்தென்று அசாவாமை வேண்டும் பெருமை முயற்சி தரும்</p>
+      <p class="footer-sub">தமிழ் பாரம்பரியம் & நவீன கற்றல் அனுபவம்</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
